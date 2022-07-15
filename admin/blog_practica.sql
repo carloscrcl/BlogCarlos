@@ -14,6 +14,24 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Volcando estructura de base de datos para blog_practica
+DROP DATABASE IF EXISTS `blog_practica`;
+CREATE DATABASE IF NOT EXISTS `blog_practica` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
+USE `blog_practica`;
+
+-- Volcando estructura para tabla blog_practica.articulos
+DROP TABLE IF EXISTS `articulos`;
+CREATE TABLE IF NOT EXISTS `articulos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `extracto` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `texto` text COLLATE utf8_unicode_ci NOT NULL,
+  `thumb` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 -- La exportación de datos fue deseleccionada.
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
